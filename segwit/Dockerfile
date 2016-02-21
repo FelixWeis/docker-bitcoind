@@ -5,8 +5,10 @@ RUN cd /root \
 	&& cd bitcoin-segwit/ \
 	&& ./autogen.sh \
 	&& ./configure --with-incompatible-bdb --disable-tests \
-	&& make -j 2 \
-	&& make install
+	&& make \
+	&& make install \
+	&& cd .. \
+	&& rm -Rfv bitcoin-segwit/
 
 EXPOSE 28333 28332
 
@@ -14,4 +16,4 @@ VOLUME /root/.bitcoin
 
 ENTRYPOINT ["bitcoind"]
 
-CMD ["-segwit", "-printtoconsole"]
+CMD ["-segnet", "-printtoconsole"]

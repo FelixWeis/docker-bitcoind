@@ -5,8 +5,10 @@ RUN cd /root \
 	&& cd bitcoin-master/ \
 	&& ./autogen.sh \
 	&& ./configure --with-incompatible-bdb --disable-tests \
-	&& make -j 2 \
-	&& make install
+	&& make \
+	&& make install \
+	&& cd .. \
+	&& rm -Rfv bitcoin-master/
 
 EXPOSE 18333 18332
 
