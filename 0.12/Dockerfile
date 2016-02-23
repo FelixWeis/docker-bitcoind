@@ -2,11 +2,11 @@ FROM buildpack-deps:jessie-curl
 MAINTAINER Felix Weis <mail@felixweis.com>
 
 ENV BITCOIN_VERSION 0.12.0
-ENV BITCOIN_DOWNLOAD_FILENAME bitcoin-${BITCOIN_VERSION}rc5-linux64.tar.gz
+ENV BITCOIN_DOWNLOAD_FILENAME bitcoin-${BITCOIN_VERSION}-linux64.tar.gz
 ENV BITCOIN_RELEASES_KEY 01EA5486DE18A882D4C2684590C8019E36C2E964
 
-RUN wget https://bitcoin.org/bin/bitcoin-core-$BITCOIN_VERSION/test/$BITCOIN_DOWNLOAD_FILENAME \
-	&& wget https://bitcoin.org/bin/bitcoin-core-$BITCOIN_VERSION/test/SHA256SUMS.asc \
+RUN wget https://bitcoin.org/bin/bitcoin-core-$BITCOIN_VERSION/$BITCOIN_DOWNLOAD_FILENAME \
+	&& wget https://bitcoin.org/bin/bitcoin-core-$BITCOIN_VERSION/SHA256SUMS.asc \
 	&& wget https://bitcoin.org/laanwj-releases.asc \
 	&& gpg --import laanwj-releases.asc \
 	&& gpg --fingerprint $BITCOIN_RELEASES_KEY \
