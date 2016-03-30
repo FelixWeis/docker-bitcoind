@@ -13,7 +13,7 @@ RUN cd /root \
 	&& cd .. \
 	&& rm -Rfv bitcoin-$BITCOIN_BRANCH/
 
-EXPOSE 28333 28332
+EXPOSE 28901 28901
 
 VOLUME /root/.bitcoin
 
