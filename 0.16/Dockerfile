@@ -1,8 +1,8 @@
 FROM buildpack-deps:stretch-curl
 LABEL maintainer="Samuel Prado <darkms@gmail.com>"
 
-ENV BITCOIN_VERSION 0.16.0
-ENV BITCOIN_DOWNLOAD_PATH https://bitcoin.org/bin/bitcoin-core-0.16.0
+ENV BITCOIN_VERSION 0.16.1
+ENV BITCOIN_DOWNLOAD_PATH https://bitcoin.org/bin/bitcoin-core-${BITCOIN_VERSION}
 ENV BITCOIN_DOWNLOAD_FILENAME bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz
 ENV BITCOIN_RELEASES_KEY 01EA5486DE18A882D4C2684590C8019E36C2E964
 
